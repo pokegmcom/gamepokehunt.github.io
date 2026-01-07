@@ -712,3 +712,72 @@ body {
         padding: 0.8rem 1.5rem;
     }
 }
+
+/* 语言选择器样式 */
+.language-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.language-selector button {
+    background-color: transparent;
+    color: var(--dark-color);
+    border: 1px solid var(--gray-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.language-selector button:hover {
+    background-color: var(--light-color);
+    border-color: var(--primary-color);
+}
+
+.language-selector .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--white-color);
+    min-width: 200px;
+    box-shadow: var(--shadow-lg);
+    border-radius: 5px;
+    z-index: 1001;
+    margin-top: 0.5rem;
+}
+
+.language-selector .dropdown-content a {
+    color: var(--dark-color);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.language-selector .dropdown-content a:hover {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+}
+
+.language-selector.active .dropdown-content {
+    display: block;
+}
+
+/* 移动端语言选择器样式 */
+@media (max-width: 768px) {
+    .language-selector {
+        margin-bottom: 1rem;
+    }
+    
+    .language-selector .dropdown-content {
+        position: static;
+        min-width: 100%;
+        box-shadow: none;
+        border: 1px solid var(--gray-color);
+    }
+}
