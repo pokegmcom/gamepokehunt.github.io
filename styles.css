@@ -567,6 +567,17 @@ body {
     color: var(--primary-color);
 }
 
+.footer-contact {
+    margin-bottom: 1rem;
+}
+
+.footer-contact p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
 .footer-links a {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
