@@ -14,8 +14,8 @@
     --dark-color: #1e293b;
     --white-color: #ffffff;
     --gray-color: #e2e8f0;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow: none;
+    --shadow-lg: none;
 }
 
 /* 기본 레이아웃 */
@@ -35,13 +35,12 @@ body {
 /* 네비게이션 바 스타일 */
 .navbar {
     background-color: var(--white-color);
-    box-shadow: var(--shadow);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .navbar .container {
@@ -163,10 +162,9 @@ body {
 .btn {
     display: inline-block;
     padding: 0.75rem 2rem;
-    border-radius: 50px;
+    border-radius: 0;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s ease;
     cursor: pointer;
     border: none;
     font-size: 1rem;
@@ -175,12 +173,11 @@ body {
 .btn-primary {
     background-color: var(--primary-color);
     color: var(--white-color);
+    transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
     background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
 }
 
 /* 슬라이드 제어 버튼 */
@@ -189,39 +186,40 @@ body {
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
+    padding: 12px 16px;
     margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    transition: background-color 0.3s ease;
+    border-radius: 0;
     user-select: none;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
 }
 
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* 슬라이드 인디케이터 */
 .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: rgba(255, 255, 255, 0.5);
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.6s ease;
+    transition: background-color 0.3s ease;
     margin-top: -50px;
     position: relative;
     z-index: 10;
+    border: none;
 }
 
 .active, .dot:hover {
@@ -489,26 +487,25 @@ body {
 }
 
 .contact-info p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
 }
 
 .contact-email {
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--white-color);
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 50px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .contact-email:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
 }
 
 /* 푸터 스타일 */
@@ -543,10 +540,31 @@ body {
     color: var(--white-color);
 }
 
-.footer-links {
+.friend-links {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.2rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.friend-links span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.friend-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.2rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.friend-links a:hover {
+    color: var(--primary-color);
 }
 
 .footer-links a {
