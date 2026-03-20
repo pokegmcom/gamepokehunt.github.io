@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>春日活动开启，多重好礼等你拿 - 像素精灵 PokeHunt</title>
+    <meta name="description" content="像素精灵PokeHunt春日活动火热开启！参与限时活动即可获得丰厚奖励，包括春日限定卡牌、钻石、金币等珍贵道具。春暖花开之际，快来收集限定奖励，提升你的怪物训练师实力！">
+    <meta name="keywords" content="像素精灵, PokeHunt, 春日活动, 游戏活动, 限定奖励, 兑换码">
+    <meta name="author" content="Pokegm">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="春日活动开启，多重好礼等你拿">
+    <meta property="og:description" content="春暖花开，像素精灵春日活动正式开启！参与活动即可获得丰厚奖励，更有春日限定卡牌等你来收集！">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://game.pokegm.com/articles/article2.html">
+    <meta property="og:type" content="article">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../logo.png" type="image/png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7B68EE',
+                        secondary: '#4CAF50',
+                        accent: '#FFD700',
+                        dark: '#2D2D2D',
+                        light: '#F8F9FA'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-dark bg-opacity-80 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="../logo.png" alt="像素精灵 标志" class="h-10 w-10">
+                    <h1 class="text-white text-2xl font-bold">像素精灵</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-white hover:text-accent transition-colors">首页</a>
+                    <a href="../features.html" class="text-white hover:text-accent transition-colors">游戏特色</a>
+                    <a href="../guide.html" class="text-white hover:text-accent transition-colors">游戏攻略</a>
+                    <a href="../codes.html" class="text-white hover:text-accent transition-colors">兑换码</a>
+                    <a href="../articles.html" class="text-accent hover:text-accent transition-colors">游戏资讯</a>
+                    <a href="../index.html#download" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium btn-hover">立即下载</a>
+                </div>
+                <div class="relative">
+                    <button onclick="toggleLanguageDropdown()" class="text-white flex items-center space-x-2">
+                        <span>简体中文</span>
+                        <span class="fa fa-caret-down"></span>
+                    </button>
+                    <div id="languageDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="https://game.pokegm.com/articles/article2.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">简体中文</a>
+                        <a href="https://taiwan.pokegm.com/articles/article2.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(台灣)</a>
+                        <a href="https://hongkong.pokegm.com/articles/article2.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(香港)</a>
+                        <a href="https://macau.pokegm.com/articles/article2.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(澳門)</a>
+                        <a href="https://korea.pokegm.com/articles/article2.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">한국어</a>
+                        <a href="https://singapore.pokegm.com/articles/article2.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">English</a>
+                        <a href="https://malaysia.pokegm.com/articles/article2.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Malay</a>
+                        <a href="https://vietnam.pokegm.com/articles/article2.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Tiếng Việt</a>
+                    </div>
+                </div>
+                <button class="md:hidden text-white" id="mobileMenuButton">
+                    <span class="fa fa-bars text-xl"></span>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-2">
+                <a href="../index.html" class="block py-2 text-white hover:text-accent transition-colors">首页</a>
+                <a href="../features.html" class="block py-2 text-white hover:text-accent transition-colors">游戏特色</a>
+                <a href="../guide.html" class="block py-2 text-white hover:text-accent transition-colors">游戏攻略</a>
+                <a href="../codes.html" class="block py-2 text-white hover:text-accent transition-colors">兑换码</a>
+                <a href="../articles.html" class="block py-2 text-accent hover:text-accent transition-colors">游戏资讯</a>
+                <a href="../index.html#download" class="mt-2 bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium inline-block btn-hover">立即下载</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章内容 -->
+    <article class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- 文章头部 -->
+                <div class="mb-8">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">活动</span>
+                        <span class="text-gray-500 text-sm">2026年3月15日</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">春日活动开启，多重好礼等你拿</h1>
+                    <div class="flex items-center gap-4 text-gray-500">
+                        <span><i class="fa fa-user"></i> 官方运营团队</span>
+                        <span><i class="fa fa-eye"></i> 8,765 阅读</span>
+                    </div>
+                </div>
+
+                <!-- 文章正文 -->
+                <div class="prose prose-lg max-w-none mb-12">
+                    <p class="text-gray-600 mb-6">亲爱的训练家们：</p>
+                    <p class="text-gray-600 mb-6">春暖花开，万物复苏！为了感谢各位训练家的支持，像素精灵春日活动正式开启！参与活动即可获得丰厚奖励，更有春日限定卡牌等你来收集！</p>
+                    
+                    <h2 class="text-2xl font-bold mb-4 text-primary">活动时间</h2>
+                    <p class="text-gray-600 mb-6">2026年3月15日 00:00 - 2026年3月31日 23:59</p>
+
+                    <h2 class="text-2xl font-bold mb-4 text-primary">活动内容</h2>
+                    
+                    <h3 class="text-xl font-semibold mb-3">一、春日登录奖励</h3>
+                    <p class="text-gray-600 mb-4">活动期间，每日登录游戏即可领取春日登录奖励！连续登录7天，即可获得春日限定卡牌！</p>
+                    <div class="bg-light rounded-xl p-6 mb-6">
+                        <ul class="space-y-2 text-gray-600">
+                            <li>第1天：水晶*50、金*1w</li>
+                            <li>第2天：神奇糖果（中）*3、体力*30</li>
+                            <li>第3天：普通卡牌随机礼包*5、金*1w</li>
+                            <li>第4天：水晶*100、疲劳值*50</li>
+                            <li>第5天：神奇糖果（大）*1、金*2w</li>
+                            <li>第6天：稀有卡牌随机礼包*2、水晶*100</li>
+                            <li>第7天：<strong>春日限定卡牌*1、金*5w</strong></li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-3">二、春日挑战任务</h3>
+                    <p class="text-gray-600 mb-4">完成春日挑战任务，即可获得丰厚的任务奖励！</p>
+                    <div class="bg-light rounded-xl p-6 mb-6">
+                        <ul class="space-y-2 text-gray-600">
+                            <li>完成10次战斗：水晶*50、金*1w</li>
+                            <li>收服5只新怪物：神奇糖果（中）*3</li>
+                            <li>挑战3次道馆：普通卡牌随机礼包*5</li>
+                            <li>获得1000点经验值：水晶*100、疲劳值*50</li>
+                            <li>完成所有任务：<strong>春日限定卡牌*1、金*3w</strong></li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-3">三、春日兑换码</h3>
+                    <p class="text-gray-600 mb-4">使用春日专属兑换码，即可获得额外奖励！</p>
+                    <div class="bg-light rounded-xl p-6 mb-6">
+                        <div class="bg-white p-4 rounded-lg">
+                            <div class="font-medium mb-2">春日兑换码</div>
+                            <div class="bg-gray-100 p-3 rounded mb-2 font-mono text-primary text-lg">spring2026</div>
+                            <div class="text-sm text-gray-600">奖励：水晶*200、春日限定卡牌*1</div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold mb-4 text-primary">活动说明</h2>
+                    <ul class="list-disc pl-6 mb-8 space-y-2 text-gray-600">
+                        <li>活动期间，每位玩家只能领取一次春日限定卡牌</li>
+                        <li>春日兑换码有效期至2026年3月31日23:59</li>
+                        <li>活动奖励将通过游戏邮箱发送，请及时领取</li>
+                        <li>活动最终解释权归像素精灵运营团队所有</li>
+                    </ul>
+
+                    <p class="text-gray-600 mb-6">春日限定卡牌拥有独特的春日主题外观和特殊属性，是训练师们不可错过的珍贵收藏！</p>
+                    <p class="text-gray-600">赶快参与活动，收集你的春日限定卡牌吧！</p>
+                </div>
+
+                <!-- 下载按钮 -->
+                <div class="text-center mb-12">
+                    <a href="../index.html#download" class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-medium text-lg btn-hover">立即下载游戏</a>
+                </div>
+
+                <!-- 分享按钮 -->
+                <div class="flex justify-center gap-4 mb-12">
+                    <button class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600 transition-colors">
+                        <i class="fa fa-twitter"></i>
+                    </button>
+                    <button class="w-12 h-12 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition-colors">
+                        <i class="fa fa-facebook"></i>
+                    </button>
+                    <button class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center hover:bg-green-600 transition-colors">
+                        <i class="fa fa-wechat"></i>
+                    </button>
+                    <button class="w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600 transition-colors">
+                        <i class="fa fa-weibo"></i>
+                    </button>
+                </div>
+
+                <!-- 相关文章 -->
+                <div class="border-t border-gray-200 pt-12">
+                    <h2 class="text-2xl font-bold mb-6">相关文章</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <a href="article1.html" class="bg-light rounded-xl p-6 card-hover">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="bg-primary text-white text-xs px-3 py-1 rounded-full">公告</span>
+                                <span class="text-gray-500 text-sm">2026年1月20日</span>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">《像素精灵》正式上线公告</h3>
+                            <p class="text-gray-600 text-sm">《PokeHunt》于2026年1月20日上午10点正式上线！经典宠物小精灵，细致还原数百种精灵的原生姿态与冒险核心！</p>
+                        </a>
+                        <a href="../codes.html" class="bg-light rounded-xl p-6 card-hover">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="bg-accent text-dark text-xs px-3 py-1 rounded-full">兑换码</span>
+                                <span class="text-gray-500 text-sm">2026年3月15日</span>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">游戏兑换码</h3>
+                            <p class="text-gray-600 text-sm">像素精灵游戏兑换码，包括最新有效的兑换码、使用方法和兑换奖励说明。</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- 下载按钮 -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">还没有下载游戏？</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">立即下载像素精灵，参与春日活动，获取限定奖励！</p>
+            <a href="../index.html#download" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full font-medium text-lg btn-hover">立即下载</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-wechat text-accent"></i>
+                            <span>公众号：小茂爱手游</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-qq text-accent"></i>
+                            <span>QQ群：1054734634</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-discord text-accent"></i>
+                            <a href="https://discord.gg/Pvkxz96V" class="hover:text-accent transition-colors">Discord社区</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="hover:text-accent transition-colors">首页</a></li>
+                        <li><a href="../features.html" class="hover:text-accent transition-colors">游戏特色</a></li>
+                        <li><a href="../guide.html" class="hover:text-accent transition-colors">游戏攻略</a></li>
+                        <li><a href="../codes.html" class="hover:text-accent transition-colors">兑换码</a></li>
+                        <li><a href="../articles.html" class="hover:text-accent transition-colors">游戏资讯</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">QQ群二维码</h3>
+                    <img src="https://dh.nnii.cn/qqqun.jpg" alt="QQ群二维码" class="w-40 h-40">
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-center text-gray-400">&copy; 2026 像素精灵 PokeHunt. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // 移动端菜单
+    document.getElementById('mobileMenuButton').addEventListener('click', function() {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // 语言选择器下拉菜单
+    function toggleLanguageDropdown() {
+        document.getElementById('languageDropdown').classList.toggle('hidden');
+    }
+
+    // 点击页面其他地方关闭语言选择器
+    window.addEventListener('click', function(event) {
+        if (!event.target.closest('.relative')) {
+            document.getElementById('languageDropdown').classList.add('hidden');
+        }
+    });
+    </script>
+</body>
+</html>

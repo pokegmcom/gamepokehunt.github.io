@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏特色介绍 - 像素精灵PokeHunt | 复古像素怪物收集养成游戏</title>
+    <meta name="description" content="探索像素精灵PokeHunt独特游戏特色：经典复古像素画风、数百种独特怪物收集养成、深度回合制策略战斗系统、广阔开放世界自由探索、刺激道馆挑战和丰富怪物进化系统。重温童年经典，开启你的怪物训练师传奇冒险之旅！">
+    <meta name="keywords" content="像素精灵, PokeHunt, 游戏特色, 复古像素, 怪物收集, 回合制战斗, 开放世界, 游戏玩法">
+    <meta name="author" content="Pokegm">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="游戏特色 - 像素精灵">
+    <meta property="og:description" content="像素精灵游戏特色介绍，包括复古像素画风、数百种怪物、回合制策略战斗、开放世界探索等核心玩法。">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://game.pokegm.com/features.html">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7B68EE',
+                        secondary: '#4CAF50',
+                        accent: '#FFD700',
+                        dark: '#2D2D2D',
+                        light: '#F8F9FA'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('1.jpg') center/cover no-repeat;
+            height: 70vh;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-dark bg-opacity-80 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="logo.png" alt="像素精灵 标志" class="h-10 w-10">
+                    <h1 class="text-white text-2xl font-bold">像素精灵</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-accent transition-colors">首页</a>
+                    <a href="features.html" class="text-accent hover:text-accent transition-colors">游戏特色</a>
+                    <a href="guide.html" class="text-white hover:text-accent transition-colors">游戏攻略</a>
+                    <a href="codes.html" class="text-white hover:text-accent transition-colors">兑换码</a>
+                    <a href="articles.html" class="text-white hover:text-accent transition-colors">游戏资讯</a>
+                    <a href="index.html#download" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium btn-hover">立即下载</a>
+                </div>
+                <div class="relative">
+                    <button onclick="toggleLanguageDropdown()" class="text-white flex items-center space-x-2">
+                        <span>简体中文</span>
+                        <span class="fa fa-caret-down"></span>
+                    </button>
+                    <div id="languageDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="https://game.pokegm.com/features.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">简体中文</a>
+                        <a href="https://taiwan.pokegm.com/features.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(台灣)</a>
+                        <a href="https://hongkong.pokegm.com/features.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(香港)</a>
+                        <a href="https://macau.pokegm.com/features.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(澳門)</a>
+                        <a href="https://korea.pokegm.com/features.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">한국어</a>
+                        <a href="https://singapore.pokegm.com/features.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">English</a>
+                        <a href="https://malaysia.pokegm.com/features.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Malay</a>
+                        <a href="https://vietnam.pokegm.com/features.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Tiếng Việt</a>
+                    </div>
+                </div>
+                <button class="md:hidden text-white" id="mobileMenuButton">
+                    <span class="fa fa-bars text-xl"></span>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-2">
+                <a href="index.html" class="block py-2 text-white hover:text-accent transition-colors">首页</a>
+                <a href="features.html" class="block py-2 text-accent hover:text-accent transition-colors">游戏特色</a>
+                <a href="guide.html" class="block py-2 text-white hover:text-accent transition-colors">游戏攻略</a>
+                <a href="codes.html" class="block py-2 text-white hover:text-accent transition-colors">兑换码</a>
+                <a href="articles.html" class="block py-2 text-white hover:text-accent transition-colors">游戏资讯</a>
+                <a href="index.html#download" class="mt-2 bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium inline-block btn-hover">立即下载</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero flex items-center justify-center">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">游戏特色</h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">探索像素精灵的核心玩法和独特魅力</p>
+        </div>
+    </section>
+
+    <!-- 游戏特色内容 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl font-bold mb-6 text-primary">复古像素画风</h2>
+                    <p class="text-gray-600 mb-4">像素精灵采用经典的复古像素艺术风格，唤起玩家的童年回忆。每一个怪物、场景和特效都经过精心设计，重现了经典怪物游戏的视觉魅力。</p>
+                    <p class="text-gray-600">游戏中的像素图形细致入微，色彩丰富，为玩家带来怀旧而又新鲜的视觉体验。无论是战斗动画还是环境互动，都充满了复古游戏的独特韵味。</p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="2.jpg" alt="复古像素画风" class="rounded-2xl shadow-lg w-full h-auto">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <img src="3.jpg" alt="数百种怪物" class="rounded-2xl shadow-lg w-full h-auto">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-primary">数百种怪物</h2>
+                    <p class="text-gray-600 mb-4">游戏中收录了数百种独特的怪物，每种怪物都有自己的属性、技能和进化形态。玩家可以通过探索、战斗和交换来收集完整的怪物图鉴。</p>
+                    <p class="text-gray-600">从普通的小怪物到强大的传奇生物，每一种怪物都有其独特的设计和战斗风格。玩家可以根据自己的策略和喜好，组建属于自己的强大战队。</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl font-bold mb-6 text-primary">回合制策略战斗</h2>
+                    <p class="text-gray-600 mb-4">像素精灵采用经典的回合制战斗系统，结合了深度的策略元素。玩家需要根据怪物的属性相克、技能组合和战场环境来制定战术。</p>
+                    <p class="text-gray-600">战斗中，玩家可以选择攻击、防御、使用技能或道具，每一个选择都可能影响战斗的胜负。通过合理的策略和队伍搭配，玩家可以挑战强大的对手。</p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="4.jpg" alt="回合制策略战斗" class="rounded-2xl shadow-lg w-full h-auto">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <img src="5.jpg" alt="开放世界探索" class="rounded-2xl shadow-lg w-full h-auto">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-primary">开放世界探索</h2>
+                    <p class="text-gray-600 mb-4">像素精灵拥有广阔的开放世界地图，玩家可以自由探索各种地形和环境。从茂密的森林到广阔的平原，从险峻的山脉到神秘的洞穴，每一个区域都有独特的怪物和宝藏等待发现。</p>
+                    <p class="text-gray-600">探索过程中，玩家可能会遇到各种随机事件、隐藏的秘密和强大的野生怪物。通过探索，玩家可以获得稀有的道具、经验值和新的怪物。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色功能卡片 -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">特色功能</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-level-up"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">怪物进化</h3>
+                    <p class="text-gray-600">怪物可以通过战斗和培养进化为更强大的形态，获得新的技能和属性提升。</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">多人对战</h3>
+                    <p class="text-gray-600">与其他玩家进行实时对战，展示你的战斗策略和怪物阵容。</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">道馆挑战</h3>
+                    <p class="text-gray-600">挑战各个道馆领袖，获得徽章，证明你的训练师实力。</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-gift"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">日常奖励</h3>
+                    <p class="text-gray-600">每天登录游戏，完成任务，即可获得丰厚的奖励和稀有道具。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载按钮 -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">立即体验像素精灵</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">加入我们的世界，开始你的怪物训练师之旅！</p>
+            <a href="index.html#download" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full font-medium text-lg btn-hover">立即下载</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-wechat text-accent"></i>
+                            <span>公众号：小茂爱手游</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-qq text-accent"></i>
+                            <span>QQ群：1054734634</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-discord text-accent"></i>
+                            <a href="https://discord.gg/Pvkxz96V" class="hover:text-accent transition-colors">Discord社区</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-accent transition-colors">首页</a></li>
+                        <li><a href="features.html" class="hover:text-accent transition-colors">游戏特色</a></li>
+                        <li><a href="guide.html" class="hover:text-accent transition-colors">游戏攻略</a></li>
+                        <li><a href="codes.html" class="hover:text-accent transition-colors">兑换码</a></li>
+                        <li><a href="articles.html" class="hover:text-accent transition-colors">游戏资讯</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">QQ群二维码</h3>
+                    <img src="https://dh.nnii.cn/qqqun.jpg" alt="QQ群二维码" class="w-40 h-40">
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-center text-gray-400">&copy; 2026 像素精灵 PokeHunt. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // 移动端菜单
+    document.getElementById('mobileMenuButton').addEventListener('click', function() {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // 语言选择器下拉菜单
+    function toggleLanguageDropdown() {
+        document.getElementById('languageDropdown').classList.toggle('hidden');
+    }
+
+    // 点击页面其他地方关闭语言选择器
+    window.addEventListener('click', function(event) {
+        if (!event.target.closest('.relative')) {
+            document.getElementById('languageDropdown').classList.add('hidden');
+        }
+    });
+    </script>
+</body>
+</html>

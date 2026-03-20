@@ -11,205 +11,227 @@
     <meta property="og:title" content="像素精灵 - 官方网站">
     <meta property="og:description" content="像素精灵(PokeHunt) - 使用复古像素画风的经典怪物收集养成游戏！一款致敬经典的回合制RPG游戏，玩家将扮演怪物训练师，在开放世界中探索未知，收服数百种独特怪物，打造专属战队，并与道馆领袖和传奇训练师展开精彩对决，重温童年热血回忆！">
     <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="https://www.pokegm.com">
+    <meta property="og:url" content="https://game.pokegm.com">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="logo.png" type="image/png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7B68EE',
+                        secondary: '#4CAF50',
+                        accent: '#FFD700',
+                        dark: '#2D2D2D',
+                        light: '#F8F9FA'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('1.jpg') center/cover no-repeat;
+            min-height: 600px;
+        }
+        @media (min-width: 768px) {
+            .hero {
+                min-height: 700px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero {
+                min-height: 800px;
+            }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-brand">
-            <img src="logo.png" alt="像素精灵 标志" class="logo">
-            <h1>像素精灵</h1>
-        </div>
-            <ul class="navbar-menu">
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">游戏介绍</a></li>
-                <li><a href="#guide">游戏攻略</a></li>
-                <li><a href="#download">立即下载</a></li>
-            </ul>
-            <div class="language-selector">
-                <button onclick="toggleLanguageDropdown()">
-                    <span>简体中文</span>
-                    <span>▼</span>
-                </button>
-                <div class="dropdown-content">
-                    <a href="https://game.pokegm.com">简体中文</a>
-                    <a href="https://taiwan.pokegm.com">繁體中文(台灣)</a>
-                    <a href="https://hongkong.pokegm.com">繁體中文(香港)</a>
-                    <a href="https://macau.pokegm.com">繁體中文(澳門)</a>
-                    <a href="https://korea.pokegm.com">한국어</a>
-                    <a href="https://singapore.pokegm.com">English</a>
-                    <a href="https://malaysia.pokegm.com">Malay</a>
-                    <a href="https://vietnam.pokegm.com">Tiếng Việt</a>
+    <nav class="sticky top-0 z-50 bg-dark bg-opacity-80 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="logo.png" alt="像素精灵 标志" class="h-10 w-10">
+                    <h1 class="text-white text-2xl font-bold">像素精灵</h1>
                 </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-accent transition-colors">首页</a>
+                    <a href="features.html" class="text-white hover:text-accent transition-colors">游戏特色</a>
+                    <a href="guide.html" class="text-white hover:text-accent transition-colors">游戏攻略</a>
+                    <a href="codes.html" class="text-white hover:text-accent transition-colors">兑换码</a>
+                    <a href="articles.html" class="text-white hover:text-accent transition-colors">游戏资讯</a>
+                    <a href="#download" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium btn-hover">立即下载</a>
+                </div>
+                <div class="relative">
+                    <button onclick="toggleLanguageDropdown()" class="text-white flex items-center space-x-2">
+                        <span>简体中文</span>
+                        <span class="fa fa-caret-down"></span>
+                    </button>
+                    <div id="languageDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="https://game.pokegm.com" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">简体中文</a>
+                        <a href="https://taiwan.pokegm.com" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(台灣)</a>
+                        <a href="https://hongkong.pokegm.com" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(香港)</a>
+                        <a href="https://macau.pokegm.com" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(澳門)</a>
+                        <a href="https://korea.pokegm.com" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">한국어</a>
+                        <a href="https://singapore.pokegm.com" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">English</a>
+                        <a href="https://malaysia.pokegm.com" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Malay</a>
+                        <a href="https://vietnam.pokegm.com" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Tiếng Việt</a>
+                    </div>
+                </div>
+                <button class="md:hidden text-white" id="mobileMenuButton">
+                    <span class="fa fa-bars text-xl"></span>
+                </button>
             </div>
-            <button class="navbar-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-2">
+                <a href="index.html" class="block py-2 text-white hover:text-accent transition-colors">首页</a>
+                <a href="features.html" class="block py-2 text-white hover:text-accent transition-colors">游戏特色</a>
+                <a href="guide.html" class="block py-2 text-white hover:text-accent transition-colors">游戏攻略</a>
+                <a href="codes.html" class="block py-2 text-white hover:text-accent transition-colors">兑换码</a>
+                <a href="articles.html" class="block py-2 text-white hover:text-accent transition-colors">游戏资讯</a>
+                <a href="#download" class="mt-2 bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium inline-block btn-hover">立即下载</a>
+            </div>
         </div>
     </nav>
 
     <!-- 主横幅 (首页部分) -->
-    <section id="home" class="hero">
-        <div class="slideshow-container">
-            <div class="slide fade">
-                <div class="slide-content">
-                    <h2>像素精灵 - 复古像素怪物收集养成游戏!</h2>
-                    <p>致敬经典怪物游戏的回合制RPG游戏，以复古像素画风重现记忆中的魅力！</p>
-                    <a href="https://hk.qu06.cn/pokehunt/?xamro7z8" class="btn btn-primary">立即下载</a>
-                </div>
+    <section id="home" class="hero flex items-center justify-center">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">像素精灵 - 复古像素怪物收集养成游戏!</h2>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">致敬经典怪物游戏的回合制RPG游戏，以复古像素画风重现记忆中的魅力！</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://hk.qu06.cn/pokehunt/?xamro7z8" class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-medium text-lg btn-hover">立即下载</a>
+                <a href="features.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-medium text-lg btn-hover">了解更多</a>
             </div>
-            <div class="slide fade">
-                <div class="slide-content">
-                    <h2>开放世界探索与怪物收集!</h2>
-                    <p>在广阔的开放世界中探索未知区域，收服数百种独特怪物！</p>
-                    <a href="#download" class="btn btn-primary">立即下载</a>
-                </div>
-            </div>
-            <div class="slide fade">
-                <div class="slide-content">
-                    <h2>挑战道馆领袖与传奇训练师!</h2>
-                    <p>组建专属战队，与道馆领袖和传奇训练师展开精彩对决！</p>
-                    <a href="#guide" class="btn btn-primary">查看攻略</a>
-                </div>
-            </div>
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </section>
 
     <!-- 立即下载部分 -->
-    <section id="download" class="download">
-        <div class="container">
-            <h2 class="section-title">立即下载</h2>
-            <div class="download-content">
-                <div class="download-info">
-                    <p>像素精灵已经推出！立即下载，进入复古像素怪物收集养成游戏的世界！</p>
-                    <p>支持平台: Android、苹果、PC、鸿蒙</p>
-
-                </div>
-                <div class="download-buttons">
-                    <a href="https://hk.qu06.cn/pokehunt/?xamro7z8" class="btn btn-primary btn-large">立即下载手机版</a>
+    <section id="download" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">立即下载</h2>
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-semibold mb-4">像素精灵已经推出！</h3>
+                        <p class="text-gray-600 mb-4">立即下载，进入复古像素怪物收集养成游戏的世界！</p>
+                        <p class="text-gray-600 mb-6">支持平台: Android、苹果、PC、鸿蒙</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <a href="https://hk.qu06.cn/pokehunt/?xamro7z8" class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-medium text-lg btn-hover">立即下载手机版</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 游戏介绍部分 -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">游戏介绍</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>像素精灵是一款使用复古像素画风的经典怪物收集养成游戏。作为致敬经典怪物游戏的回合制RPG游戏，在重现经典怪物游戏魅力的同时，加入了全新的开放世界探索元素。</p>
-                    <p>玩家将扮演怪物训练师，在开放世界中探索未知区域，收服数百种独特怪物，组建专属战队。与道馆领袖和传奇训练师展开精彩对决，重温童年热血回忆！</p>
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">游戏介绍</h2>
+            <div class="max-w-4xl mx-auto mb-16">
+                <p class="text-gray-600 text-lg mb-4">像素精灵是一款使用复古像素画风的经典怪物收集养成游戏。作为致敬经典怪物游戏的回合制RPG游戏，在重现经典怪物游戏魅力的同时，加入了全新的开放世界探索元素。</p>
+                <p class="text-gray-600 text-lg">玩家将扮演怪物训练师，在开放世界中探索未知区域，收服数百种独特怪物，组建专属战队。与道馆领袖和传奇训练师展开精彩对决，重温童年热血回忆！</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-light rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-picture-o"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">复古像素画风</h3>
+                    <p class="text-gray-600">以唤起童年回忆的复古风格图像，重现经典怪物游戏的魅力</p>
                 </div>
-                <div class="about-features">
-                    <div class="feature">
-                        <h3>复古像素画风</h3>
-                        <p>以唤起童年回忆的复古风格图像，重现经典怪物游戏的魅力</p>
+                <div class="bg-light rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-paw"></i>
                     </div>
-                    <div class="feature">
-                        <h3>数百种怪物</h3>
-                        <p>收服并收集各种类型的独特怪物，组建专属战队</p>
+                    <h3 class="text-xl font-semibold mb-2">数百种怪物</h3>
+                    <p class="text-gray-600">收服并收集各种类型的独特怪物，组建专属战队</p>
+                </div>
+                <div class="bg-light rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-gamepad"></i>
                     </div>
-                    <div class="feature">
-                        <h3>回合制策略战斗</h3>
-                        <p>策略性地组建队伍，与道馆领袖和传奇训练师展开精彩对决</p>
+                    <h3 class="text-xl font-semibold mb-2">回合制策略战斗</h3>
+                    <p class="text-gray-600">策略性地组建队伍，与道馆领袖和传奇训练师展开精彩对决</p>
+                </div>
+                <div class="bg-light rounded-xl p-6 shadow-md card-hover">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fa fa-map"></i>
                     </div>
-                    <div class="feature">
-                        <h3>开放世界探索</h3>
-                        <p>在广阔的开放世界中探索未知区域，寻找隐藏的怪物</p>
-                    </div>
+                    <h3 class="text-xl font-semibold mb-2">开放世界探索</h3>
+                    <p class="text-gray-600">在广阔的开放世界中探索未知区域，寻找隐藏的怪物</p>
                 </div>
             </div>
-            <!-- 游戏特色图片幻灯片 -->
-            <div class="about-slider">
-                <div class="slider-container">
-                    <div class="slider-slide fade">
-                        <img src="1.jpg" alt="游戏特色图片1" class="slider-image">
-                    </div>
-                    <div class="slider-slide fade">
-                        <img src="2.jpg" alt="游戏特色图片2" class="slider-image">
-                    </div>
-                    <div class="slider-slide fade">
-                        <img src="3.jpg" alt="游戏特色图片3" class="slider-image">
-                    </div>
-                    <div class="slider-slide fade">
-                        <img src="4.jpg" alt="游戏特色图片4" class="slider-image">
-                    </div>
-                    <div class="slider-slide fade">
-                        <img src="5.jpg" alt="游戏特色图片5" class="slider-image">
-                    </div>
-                </div>
-                <!-- 控制按钮 -->
-                <a class="slider-prev" onclick="plusFeatureSlides(-1)">&lt;</a>
-                <a class="slider-next" onclick="plusFeatureSlides(1)">&gt;</a>
-                <!-- 指示器 -->
-                <div class="slider-dots">
-                    <span class="slider-dot" onclick="currentFeatureSlide(1)"></span>
-                    <span class="slider-dot" onclick="currentFeatureSlide(2)"></span>
-                    <span class="slider-dot" onclick="currentFeatureSlide(3)"></span>
-                    <span class="slider-dot" onclick="currentFeatureSlide(4)"></span>
-                    <span class="slider-dot" onclick="currentFeatureSlide(5)"></span>
+            <div class="mt-16">
+                <div class="bg-light rounded-2xl p-4">
+                    <img src="1.jpg" alt="游戏特色图片" class="w-full h-auto rounded-xl">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 文章公告部分 -->
-    <section id="article" class="article">
-        <div class="container">
-            <div class="article-content">
-                <h2 class="section-title">游戏上线公告</h2>
+    <section id="article" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">游戏上线公告</h2>
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 max-w-4xl mx-auto">
                 <div class="article-text">
-                    <p>亲爱的训练家们:</p>
-                    <p>《PokeHunt》于2026年1月20日上午10点正式上线!经典宠物小精灵，细致还原数百种精灵的原生姿态与冒险核心！在游戏中您可以体验到:</p>
-                    <ul>
+                    <p class="text-gray-600 mb-4">亲爱的训练家们:</p>
+                    <p class="text-gray-600 mb-6">《PokeHunt》于2026年1月20日上午10点正式上线!经典宠物小精灵，细致还原数百种精灵的原生姿态与冒险核心！在游戏中您可以体验到:</p>
+                    <ul class="list-disc pl-6 mb-8 space-y-2 text-gray-600">
                         <li>【还原内容】百分百还原经典精灵风貌，汇聚各方伙伴！</li>
                         <li>【精灵形态】MEGA进化、巨大化，解放精灵全部形态！</li>
                         <li>【秘宝增益】羁绊饰品，激活精灵潜藏实力！</li>
                         <li>【探索冒险】开放式地图情关，发觉隐藏秘境！</li>
                         <li>【竞技对决】单人对决较量实力，争夺巅峰排名！</li>
                     </ul>
-                    <p class="gift-title">礼包码：【开服福利】</p>
-                    <div class="gift-codes">
-                        <div class="gift-item">
-                            <div class="gift-number">礼包码1</div>
-                            <div class="gift-code">ay6btcrx</div>
-                            <div class="gift-reward">水晶*50、金*1w</div>
+                    <h3 class="text-xl font-semibold mb-4 text-primary">礼包码：【开服福利】</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-light rounded-xl p-4">
+                            <div class="font-medium mb-1">礼包码1</div>
+                            <div class="bg-white p-2 rounded-lg mb-1 font-mono">ay6btcrx</div>
+                            <div class="text-sm text-gray-600">水晶*50、金*1w</div>
                         </div>
-                        <div class="gift-item">
-                            <div class="gift-number">礼包码2</div>
-                            <div class="gift-code">d7lsw8bu</div>
-                            <div class="gift-reward">神奇糖果（中）*5、金*1w</div>
+                        <div class="bg-light rounded-xl p-4">
+                            <div class="font-medium mb-1">礼包码2</div>
+                            <div class="bg-white p-2 rounded-lg mb-1 font-mono">d7lsw8bu</div>
+                            <div class="text-sm text-gray-600">神奇糖果（中）*5、金*1w</div>
                         </div>
-                        <div class="gift-item">
-                            <div class="gift-number">礼包码3</div>
-                            <div class="gift-code">1frydl8n</div>
-                            <div class="gift-reward">体力*50、疲劳值*100</div>
+                        <div class="bg-light rounded-xl p-4">
+                            <div class="font-medium mb-1">礼包码3</div>
+                            <div class="bg-white p-2 rounded-lg mb-1 font-mono">1frydl8n</div>
+                            <div class="text-sm text-gray-600">体力*50、疲劳值*100</div>
                         </div>
-                        <div class="gift-item">
-                            <div class="gift-number">礼包码4</div>
-                            <div class="gift-code">42binn3h</div>
-                            <div class="gift-reward">普通卡牌随机礼包*10、神奇糖果（中）*5</div>
+                        <div class="bg-light rounded-xl p-4">
+                            <div class="font-medium mb-1">礼包码4</div>
+                            <div class="bg-white p-2 rounded-lg mb-1 font-mono">42binn3h</div>
+                            <div class="text-sm text-gray-600">普通卡牌随机礼包*10、神奇糖果（中）*5</div>
                         </div>
-                        <div class="gift-item">
-                            <div class="gift-number">礼包码5</div>
-                            <div class="gift-code">y67gaamk</div>
-                            <div class="gift-reward">水晶*100、金*1w</div>
+                        <div class="bg-light rounded-xl p-4 md:col-span-2">
+                            <div class="font-medium mb-1">礼包码5</div>
+                            <div class="bg-white p-2 rounded-lg mb-1 font-mono">y67gaamk</div>
+                            <div class="text-sm text-gray-600">水晶*100、金*1w</div>
                         </div>
                     </div>
                 </div>
@@ -218,145 +240,116 @@
     </section>
 
     <!-- 游戏攻略部分 -->
-    <section id="guide" class="guide">
-        <div class="container">
-            <h2 class="section-title">游戏攻略</h2>
-            <div class="guide-content">
-                <div class="guide-item">
-                    <h3>初学者指南</h3>
-                    <div class="guide-steps">
-                        <div class="step">
-                            <h4>1. 立即下载</h4>
-                            <p>立即下载游戏。下载完成后即可开始游戏体验。</p>
+    <section id="guide" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">游戏攻略</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-light rounded-2xl p-8 shadow-md">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">初学者指南</h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">1</div>
+                            <div>
+                                <h4 class="text-lg font-medium mb-2">立即下载</h4>
+                                <p class="text-gray-600">立即下载游戏。下载完成后即可开始游戏体验。</p>
+                            </div>
                         </div>
-                        <div class="step">
-                            <h4>2. 寻找第一只怪物</h4>
-                            <p>在开放世界中开始探索，在不同区域寻找怪物。触摸画面中出现的怪物进行收服。</p>
+                        <div class="flex gap-4">
+                            <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">2</div>
+                            <div>
+                                <h4 class="text-lg font-medium mb-2">寻找第一只怪物</h4>
+                                <p class="text-gray-600">在开放世界中开始探索，在不同区域寻找怪物。触摸画面中出现的怪物进行收服。</p>
+                            </div>
                         </div>
-                        <div class="step">
-                            <h4>3. 培养怪物</h4>
-                            <p>给收服的怪物喂食并累积经验值使其进化。培养强大的怪物吧。</p>
+                        <div class="flex gap-4">
+                            <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">3</div>
+                            <div>
+                                <h4 class="text-lg font-medium mb-2">培养怪物</h4>
+                                <p class="text-gray-600">给收服的怪物喂食并累积经验值使其进化。培养强大的怪物吧。</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="guide-item">
-                    <h3>高级策略</h3>
-                    <div class="guide-tips">
-                    <div class="tip">
-                        <h4>属性相克运用</h4>
-                        <p>每只怪物对不同属性都有优势和劣势。在回合制战斗中适当运用相克关系获胜。</p>
+                <div class="bg-light rounded-2xl p-8 shadow-md">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">高级策略</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-xl p-4 shadow-sm">
+                            <h4 class="text-lg font-medium mb-2">属性相克运用</h4>
+                            <p class="text-gray-600">每只怪物对不同属性都有优势和劣势。在回合制战斗中适当运用相克关系获胜。</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 shadow-sm">
+                            <h4 class="text-lg font-medium mb-2">技能组合</h4>
+                            <p class="text-gray-600">适当组合怪物的技能造成更大伤害。注意特殊技能的冷却时间。</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 shadow-sm">
+                            <h4 class="text-lg font-medium mb-2">队伍组建</h4>
+                            <p class="text-gray-600">使用多种类型的怪物组建专属队伍。准备适合与道馆领袖和传奇训练师对战的队伍。</p>
+                        </div>
                     </div>
-                    <div class="tip">
-                        <h4>技能组合</h4>
-                        <p>适当组合怪物的技能造成更大伤害。注意特殊技能的冷却时间。</p>
-                    </div>
-                    <div class="tip">
-                        <h4>队伍组建</h4>
-                        <p>使用多种类型的怪物组建专属队伍。准备适合与道馆领袖和传奇训练师对战的队伍。</p>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-
     <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="friend-links">
-                    <span>友情链接: </span>
-                    <a href="https://game.pokegm.com">像素精灵</a>
-                    <a href="https://taiwan.pokegm.com">像素精靈</a>
-                    <a href="https://hongkong.pokegm.com">像素精靈</a>
-                    <a href="https://macau.pokegm.com">像素精灵</a>
-                    <a href="https://korea.pokegm.com">픽셀精灵</a>
-                    <a href="https://singapore.pokegm.com">Pixel Sprite</a>
-                    <a href="https://malaysia.pokegm.com">Pixsel Sprite</a>
-                    <a href="https://vietnam.pokegm.com">Tinh linh pixsel</a>
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-wechat text-accent"></i>
+                            <span>公众号：小茂爱手游</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-qq text-accent"></i>
+                            <span>QQ群：1054734634</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-discord text-accent"></i>
+                            <a href="https://discord.gg/Pvkxz96V" class="hover:text-accent transition-colors">Discord社区</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="footer-contact">
-                    <p>如果您有任何问题或建议，请通过以下方式联系我们：</p>
-                    <p>邮箱: game@pokegm.com</p>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-accent transition-colors">首页</a></li>
+                        <li><a href="features.html" class="hover:text-accent transition-colors">游戏特色</a></li>
+                        <li><a href="guide.html" class="hover:text-accent transition-colors">游戏攻略</a></li>
+                        <li><a href="codes.html" class="hover:text-accent transition-colors">兑换码</a></li>
+                        <li><a href="articles.html" class="hover:text-accent transition-colors">游戏资讯</a></li>
+                    </ul>
                 </div>
-                <p>&copy; 2026 像素精灵 PokeHunt. 保留所有权利.</p>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">QQ群二维码</h3>
+                    <img src="https://dh.nnii.cn/qqqun.jpg" alt="QQ群二维码" class="w-40 h-40">
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-center text-gray-400">&copy; 2026 像素精灵 PokeHunt. 保留所有权利.</p>
             </div>
         </div>
     </footer>
 
     <script>
-    // 轮播图脚本
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("slide");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-    }
-
-    // 游戏特色图片轮播脚本
-    let featureSlideIndex = 1;
-    showFeatureSlides(featureSlideIndex);
-
-    function plusFeatureSlides(n) {
-        showFeatureSlides(featureSlideIndex += n);
-    }
-
-    function currentFeatureSlide(n) {
-        showFeatureSlides(featureSlideIndex = n);
-    }
-
-    function showFeatureSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("slider-slide");
-        let dots = document.getElementsByClassName("slider-dot");
-        if (n > slides.length) {featureSlideIndex = 1}
-        if (n < 1) {featureSlideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[featureSlideIndex-1].style.display = "block";
-        dots[featureSlideIndex-1].className += " active";
-    }
-
-    // 导航栏响应式菜单
-    document.querySelector('.navbar-toggle').addEventListener('click', function() {
-        document.querySelector('.navbar-menu').classList.toggle('active');
+    // 移动端菜单
+    document.getElementById('mobileMenuButton').addEventListener('click', function() {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
     });
 
     // 语言选择器下拉菜单
     function toggleLanguageDropdown() {
-        document.querySelector('.language-selector').classList.toggle('active');
+        document.getElementById('languageDropdown').classList.toggle('hidden');
     }
 
     // 点击页面其他地方关闭语言选择器
     window.addEventListener('click', function(event) {
-        if (!event.target.closest('.language-selector')) {
-            document.querySelector('.language-selector').classList.remove('active');
+        if (!event.target.closest('.relative')) {
+            document.getElementById('languageDropdown').classList.add('hidden');
         }
     });
     </script>
+</body>
+</html>

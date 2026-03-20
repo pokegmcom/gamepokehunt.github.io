@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏攻略大全 - 像素精灵PokeHunt | 新手入门与高级策略指南</title>
+    <meta name="description" content="像素精灵PokeHunt完整游戏攻略大全，涵盖新手入门指南、高级战斗策略、属性相克表、队伍组建技巧、怪物培养方法和道馆挑战攻略。从零开始的详细教学，帮助你快速上手并成为顶尖的怪物训练大师！">
+    <meta name="keywords" content="像素精灵, PokeHunt, 游戏攻略, 初学者指南, 高级策略, 属性相克, 队伍组建, 游戏技巧">
+    <meta name="author" content="Pokegm">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="游戏攻略 - 像素精灵">
+    <meta property="og:description" content="像素精灵游戏攻略，包括初学者指南、高级策略、属性相克表、队伍组建技巧等详细内容。">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://game.pokegm.com/guide.html">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7B68EE',
+                        secondary: '#4CAF50',
+                        accent: '#FFD700',
+                        dark: '#2D2D2D',
+                        light: '#F8F9FA'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('3.jpg') center/cover no-repeat;
+            height: 70vh;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 bg-dark bg-opacity-80 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="logo.png" alt="像素精灵 标志" class="h-10 w-10">
+                    <h1 class="text-white text-2xl font-bold">像素精灵</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-accent transition-colors">首页</a>
+                    <a href="features.html" class="text-white hover:text-accent transition-colors">游戏特色</a>
+                    <a href="guide.html" class="text-accent hover:text-accent transition-colors">游戏攻略</a>
+                    <a href="codes.html" class="text-white hover:text-accent transition-colors">兑换码</a>
+                    <a href="articles.html" class="text-white hover:text-accent transition-colors">游戏资讯</a>
+                    <a href="index.html#download" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium btn-hover">立即下载</a>
+                </div>
+                <div class="relative">
+                    <button onclick="toggleLanguageDropdown()" class="text-white flex items-center space-x-2">
+                        <span>简体中文</span>
+                        <span class="fa fa-caret-down"></span>
+                    </button>
+                    <div id="languageDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+                        <a href="https://game.pokegm.com/guide.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">简体中文</a>
+                        <a href="https://taiwan.pokegm.com/guide.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(台灣)</a>
+                        <a href="https://hongkong.pokegm.com/guide.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(香港)</a>
+                        <a href="https://macau.pokegm.com/guide.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">繁體中文(澳門)</a>
+                        <a href="https://korea.pokegm.com/guide.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">한국어</a>
+                        <a href="https://singapore.pokegm.com/guide.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">English</a>
+                        <a href="https://malaysia.pokegm.com/guide.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Malay</a>
+                        <a href="https://vietnam.pokegm.com/guide.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Tiếng Việt</a>
+                    </div>
+                </div>
+                <button class="md:hidden text-white" id="mobileMenuButton">
+                    <span class="fa fa-bars text-xl"></span>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-2">
+                <a href="index.html" class="block py-2 text-white hover:text-accent transition-colors">首页</a>
+                <a href="features.html" class="block py-2 text-white hover:text-accent transition-colors">游戏特色</a>
+                <a href="guide.html" class="block py-2 text-accent hover:text-accent transition-colors">游戏攻略</a>
+                <a href="codes.html" class="block py-2 text-white hover:text-accent transition-colors">兑换码</a>
+                <a href="articles.html" class="block py-2 text-white hover:text-accent transition-colors">游戏资讯</a>
+                <a href="index.html#download" class="mt-2 bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-medium inline-block btn-hover">立即下载</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero flex items-center justify-center">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">游戏攻略</h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">掌握游戏技巧，成为最强训练师</p>
+        </div>
+    </section>
+
+    <!-- 初学者指南 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">初学者指南</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-12">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-shrink-0 w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-4">游戏下载与安装</h3>
+                            <p class="text-gray-600 mb-4">首先，你需要从官方网站下载像素精灵游戏。游戏支持Android、苹果、PC和鸿蒙平台，选择适合你的平台进行下载。</p>
+                            <p class="text-gray-600">下载完成后，按照提示进行安装。安装完成后，打开游戏，创建你的训练师角色，开始你的冒险之旅。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-shrink-0 w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-4">选择你的初始怪物</h3>
+                            <p class="text-gray-600 mb-4">游戏开始时，你将有机会选择一只初始怪物。不同的初始怪物具有不同的属性和技能，选择适合你游戏风格的怪物。</p>
+                            <p class="text-gray-600">初始怪物会陪伴你度过游戏的早期阶段，所以选择一只你喜欢的怪物非常重要。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-shrink-0 w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-4">探索开放世界</h3>
+                            <p class="text-gray-600 mb-4">像素精灵拥有广阔的开放世界，你可以自由探索各种地形和环境。在探索过程中，你会遇到各种野生怪物，可以尝试收服它们。</p>
+                            <p class="text-gray-600">探索时，注意收集道具和资源，这些将对你的冒险非常有帮助。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-shrink-0 w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold">4</div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-semibold mb-4">战斗与升级</h3>
+                            <p class="text-gray-600 mb-4">与野生怪物或其他训练师战斗是提升你怪物等级的主要方式。战斗中，你需要合理运用怪物的技能和属性相克关系。</p>
+                            <p class="text-gray-600">当你的怪物获得足够的经验值后，它们会升级，属性会得到提升，甚至可能进化为更强大的形态。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 高级策略 -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">高级策略</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-2xl p-8 shadow-md card-hover">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">属性相克</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-primary text-white">
+                                    <th class="border border-gray-300 px-4 py-2">属性</th>
+                                    <th class="border border-gray-300 px-4 py-2">克制</th>
+                                    <th class="border border-gray-300 px-4 py-2">被克制</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-300 px-4 py-2">火</td>
+                                    <td class="border border-gray-300 px-4 py-2">草、冰、虫</td>
+                                    <td class="border border-gray-300 px-4 py-2">水、岩石</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border border-gray-300 px-4 py-2">水</td>
+                                    <td class="border border-gray-300 px-4 py-2">火、岩石</td>
+                                    <td class="border border-gray-300 px-4 py-2">草、电</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 px-4 py-2">草</td>
+                                    <td class="border border-gray-300 px-4 py-2">水、岩石</td>
+                                    <td class="border border-gray-300 px-4 py-2">火、冰、虫</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border border-gray-300 px-4 py-2">电</td>
+                                    <td class="border border-gray-300 px-4 py-2">水、飞行</td>
+                                    <td class="border border-gray-300 px-4 py-2">地面</td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-300 px-4 py-2">冰</td>
+                                    <td class="border border-gray-300 px-4 py-2">草、地面、飞行</td>
+                                    <td class="border border-gray-300 px-4 py-2">火</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-md card-hover">
+                    <h3 class="text-2xl font-semibold mb-6 text-primary">队伍组建</h3>
+                    <p class="text-gray-600 mb-4">一个平衡的队伍是成功的关键。以下是队伍组建的一些建议：</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-600">
+                        <li>包含不同属性的怪物，以应对各种情况</li>
+                        <li>确保队伍中有物理攻击和特殊攻击的怪物</li>
+                        <li>考虑怪物的速度属性，先手攻击往往能决定战斗的胜负</li>
+                        <li>携带一些具有辅助技能的怪物，如治疗、状态异常等</li>
+                    </ul>
+                    <p class="text-gray-600">根据不同的对手和场景，灵活调整你的队伍配置。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 道馆挑战攻略 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">道馆挑战攻略</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div class="bg-light rounded-xl p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">草系道馆</h3>
+                        <p class="text-gray-600 mb-4">草系道馆的领袖使用草属性怪物，弱点是火、冰和虫属性。</p>
+                        <p class="text-gray-600">建议携带火属性怪物，它们对草属性怪物有克制效果。同时，注意草属性怪物可能会使用睡眠粉等状态技能。</p>
+                    </div>
+                    
+                    <div class="bg-light rounded-xl p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">水系道馆</h3>
+                        <p class="text-gray-600 mb-4">水系道馆的领袖使用水属性怪物，弱点是草和电属性。</p>
+                        <p class="text-gray-600">建议携带草属性或电属性怪物，它们对水属性怪物有克制效果。注意水属性怪物可能会使用冲浪等强力技能。</p>
+                    </div>
+                    
+                    <div class="bg-light rounded-xl p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">火系道馆</h3>
+                        <p class="text-gray-600 mb-4">火系道馆的领袖使用火属性怪物，弱点是水和岩石属性。</p>
+                        <p class="text-gray-600">建议携带水属性怪物，它们对火属性怪物有克制效果。注意火属性怪物可能会使用火焰喷射等强力技能。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">常见问题</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <h3 class="text-lg font-semibold mb-2">如何快速升级怪物？</h3>
+                        <p class="text-gray-600">参加战斗是升级怪物的主要方式。你可以通过与野生怪物战斗、挑战其他训练师或参加特殊活动来获得经验值。此外，使用经验糖果也可以快速提升怪物等级。</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <h3 class="text-lg font-semibold mb-2">如何获得稀有怪物？</h3>
+                        <p class="text-gray-600">稀有怪物通常出现在特定的地点或特定的时间。你可以通过探索不同的区域、参加特殊活动或使用特殊道具来增加遇到稀有怪物的几率。</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <h3 class="text-lg font-semibold mb-2">如何提高收服怪物的成功率？</h3>
+                        <p class="text-gray-600">收服怪物的成功率取决于怪物的剩余生命值、状态异常和使用的精灵球类型。当怪物的生命值较低、处于睡眠或麻痹状态时，收服的成功率会大大提高。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载按钮 -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">准备好开始你的冒险了吗？</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">下载游戏，应用这些攻略技巧，成为最强的训练师！</p>
+            <a href="index.html#download" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full font-medium text-lg btn-hover">立即下载</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-wechat text-accent"></i>
+                            <span>公众号：小茂爱手游</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-qq text-accent"></i>
+                            <span>QQ群：1054734634</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa fa-discord text-accent"></i>
+                            <a href="https://discord.gg/Pvkxz96V" class="hover:text-accent transition-colors">Discord社区</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-accent transition-colors">首页</a></li>
+                        <li><a href="features.html" class="hover:text-accent transition-colors">游戏特色</a></li>
+                        <li><a href="guide.html" class="hover:text-accent transition-colors">游戏攻略</a></li>
+                        <li><a href="codes.html" class="hover:text-accent transition-colors">兑换码</a></li>
+                        <li><a href="articles.html" class="hover:text-accent transition-colors">游戏资讯</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">QQ群二维码</h3>
+                    <img src="https://dh.nnii.cn/qqqun.jpg" alt="QQ群二维码" class="w-40 h-40">
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-center text-gray-400">&copy; 2026 像素精灵 PokeHunt. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // 移动端菜单
+    document.getElementById('mobileMenuButton').addEventListener('click', function() {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // 语言选择器下拉菜单
+    function toggleLanguageDropdown() {
+        document.getElementById('languageDropdown').classList.toggle('hidden');
+    }
+
+    // 点击页面其他地方关闭语言选择器
+    window.addEventListener('click', function(event) {
+        if (!event.target.closest('.relative')) {
+            document.getElementById('languageDropdown').classList.add('hidden');
+        }
+    });
+    </script>
+</body>
+</html>
